@@ -1,35 +1,28 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-    
-    </v-app-bar>
-
-    <v-main>
-      
-      <MainPage/>
-      
-    </v-main>
-    
-  </v-app>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import MainPage from './pages/index.vue';
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-export default Vue.extend({
-  name: 'App',
+nav {
+  padding: 30px;
 
-  components: {
-    MainPage,
-  },
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-  data: () => ({
-    //
-  }),
-});
-</script>
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
